@@ -20,8 +20,8 @@ public final class QGraph implements GameGraph {
     }
 
     /**
-     * returns true if the LEVELS array has a next element.
-     * this method is called in the AnswerServlet.
+     * Returns true if the LEVELS array has a next element.
+     * This method is called in the AnswerServlet.
      * @param level (will be a session attribut)
      */
     @Override
@@ -31,7 +31,8 @@ public final class QGraph implements GameGraph {
     }
 
     /**
-     * returns a String LEVEL[level].
+     * Returns a String LEVEL[level].
+     * This method is called in the quest.jsp file
      * @param level (will be a session attribut)
      */
     @Override
@@ -40,8 +41,9 @@ public final class QGraph implements GameGraph {
     }
 
     /**
-     * returns the inner array of OPTIONS.
-     * instead of branches, it uses an index.
+     * Returns the inner array of OPTIONS[].
+     * This method is called in the quest.jsp file.
+     * Instead of branches, it uses an index.
      * @param level (will be a session attribut)
      */
     @Override
@@ -50,7 +52,8 @@ public final class QGraph implements GameGraph {
     }
 
     /**
-     * returns a String FINISH[level].
+     * Returns a String FINISH[level].
+     * This method is called in the finish.jsp file.
      * @param level (will be a session attribut)
      */
     @Override
@@ -59,8 +62,9 @@ public final class QGraph implements GameGraph {
     }
 
     /**
-     * returns true if the clients answer to a question is correct.
+     * Returns true if the clients answer to a question is correct.
      * In this specific case the first option of each question is the correct answer.
+     * This method is called in the Answer Servlet.
 
      * The game will be won if the last question is answered correctly, and there is no more questions left.
      * if isAnswerRight(2, 0) && !hasNext(2)
