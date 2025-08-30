@@ -1,6 +1,5 @@
 package controller;
 
-import model.AppGraph;
 import model.GameGraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

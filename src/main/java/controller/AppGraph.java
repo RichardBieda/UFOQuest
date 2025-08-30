@@ -1,4 +1,7 @@
-package model;
+package controller;
+
+import model.GameGraph;
+import model.QGraph;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
