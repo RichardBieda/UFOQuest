@@ -1,5 +1,8 @@
 package controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +16,7 @@ import java.io.IOException;
 public class StartServlet extends HttpServlet {
 
     private final static int START_LEVEL = 0;
+    private static final Logger logger = LoggerFactory.getLogger(StartServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,6 +30,10 @@ public class StartServlet extends HttpServlet {
         } else {
             session.setAttribute("gamesPlayed", gamesCount + 1);
         }
+
+        logger.info("{} start a game", session.getId());
+//        System.out.println("catalina.base=" + System.getProperty("catalina.base"));
+//        System.out.println("user.dir=" + System.getProperty("user.dir"));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/quest.jsp");
         dispatcher.forward(req, resp);
