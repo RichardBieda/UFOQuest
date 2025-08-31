@@ -1,7 +1,7 @@
 package controller;
 
 import model.GameGraph;
-import model.QGraph;
+import model.UFOQuestGraph;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
@@ -12,7 +12,7 @@ public class AppGraph implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent e) {
-        GameGraph graph = new QGraph();
+        GameGraph graph = new UFOQuestGraph();
         e.getServletContext().setAttribute(ATTR_GLOBAL_GRAPH, graph);
     }
 

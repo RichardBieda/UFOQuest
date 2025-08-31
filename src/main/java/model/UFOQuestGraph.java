@@ -6,7 +6,7 @@ import model.UFOQuestGame.UFOText;
  * This class implements the GameGraph interface that provides methods to use in Servlets and jstl.
  */
 
-public final class QGraph implements GameGraph {
+public final class UFOQuestGraph implements GameGraph {
 
     public static final String[] LEVELS = {UFOText.FIRST_QUESTION.getText(), UFOText.SECOND_QUESTION.getText(), UFOText.THIRD_QUESTION.getText()};
 
@@ -16,7 +16,7 @@ public final class QGraph implements GameGraph {
 
     public static final String[] FINISH = {UFOText.FIRST_DEFEAT.getText(), UFOText.SECOND_DEFEAT.getText(), UFOText.THIRD_DEFEAT.getText(), UFOText.VICTORY.getText()};
 
-    public QGraph() {
+    public UFOQuestGraph() {
     }
 
     /***

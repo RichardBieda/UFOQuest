@@ -1,11 +1,11 @@
 import model.GameGraph;
-import model.QGraph;
+import model.UFOQuestGraph;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class QuestGraphTest {
 
-    static GameGraph graph = new QGraph();
+    static GameGraph graph = new UFOQuestGraph();
 
     @Test
     void TEST_QUEST_1() {

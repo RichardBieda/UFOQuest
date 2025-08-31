@@ -21,8 +21,8 @@ public class AnswerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String result = req.getParameter("choose");
-        int option = Integer.parseInt(result);
+        String answer = req.getParameter("choose");
+        int option = Integer.parseInt(answer);
 
         GameGraph graph = (GameGraph) getServletContext().getAttribute(AppGraph.ATTR_GLOBAL_GRAPH);
 
