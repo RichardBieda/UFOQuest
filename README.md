@@ -12,7 +12,7 @@ Then the quest.jsp will be the respond.
 In the quest.jsp 
 The methode graph.getQuestion(int level) shows the question, its parameter is the session level attribute.
 A jstl each loop iterates through the answer options by using the result of the graph.getOptions(int level) call.
-Then it shows the options as radio buttons. When the submit button will be pressed a doPost method hands on the result of the option as a int.
+Then it shows the options as radio buttons. When the submit button will be pressed a post request hands on the result of the option as a int to the Answerservlet.
 
 The AnswerServlet checks the correctness of the answer by calling.
 if the answer was correct and there is no more question left, the game is won. The finish jsp will be responded.
