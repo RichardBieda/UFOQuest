@@ -13,7 +13,7 @@
 
   <body>
     <h1>${graph.getFinish(sessionScope.level)}</h1>
-    <a href="/modul3finalQuest/start" class="sLink">Resart</a>
+    <a href="/modul3finalQuest/start" class="sLink">Restart</a>
 
     <div class="divElement" role="region" aria-label="info" contenteditable="false">
       <div>Session-ID: <c:out value="${pageContext.session.id}"  /></div>
