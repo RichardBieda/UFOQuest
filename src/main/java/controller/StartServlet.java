@@ -27,8 +27,6 @@ public class StartServlet extends HttpServlet {
         Integer gamesCount = (Integer) session.getAttribute("gamesPlayed");
         if (gamesCount == null) {
             session.setAttribute("gamesPlayed", START_LEVEL);
-        } else {
-            session.setAttribute("gamesPlayed", gamesCount + 1);
         }
 
         logger.info("{} start a game", session.getId());

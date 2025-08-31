@@ -27,24 +27,26 @@ public class AnswerServlet extends HttpServlet {
         GameGraph graph = (GameGraph) getServletContext().getAttribute(AppGraph.ATTR_GLOBAL_GRAPH);
 
         HttpSession session = req.getSession(false);
+        int oldLevel = (int) session.getAttribute("level");
+        int oldGamesPlayed = (int) session.getAttribute("gamesPlayed");
 
-        int level = (int) session.getAttribute("level");
+        logger.info("{} reached quest {}", session.getId(), oldLevel + 1);
 
-        logger.info("{} reached quest {}", session.getId(), level + 1);
+        if (graph.isAnswerRight(oldLevel, option)) {
+            session.setAttribute("level", oldLevel + 1);
 
-        if (graph.isAnswerRight(level,option)) {
-            session.setAttribute("level", level + 1);
-
-            if (!graph.hasNext(level)) {
-                req.getRequestDispatcher("/WEB-INF/finish.jsp").forward(req, resp);
+            if (graph.hasNext(oldLevel)) {
+                req.getRequestDispatcher("/WEB-INF/quest.jsp").forward(req, resp);
+            } else {
                 logger.info("{} won the game", session.getId());
-                return;
+                session.setAttribute("gamesPlayed", oldGamesPlayed + 1);
+                req.getRequestDispatcher("/WEB-INF/finish.jsp").forward(req, resp);
             }
 
-            req.getRequestDispatcher("/WEB-INF/quest.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("/WEB-INF/finish.jsp").forward(req, resp);
             logger.info("{} lost the game", session.getId());
+            session.setAttribute("gamesPlayed", oldGamesPlayed + 1);
+            req.getRequestDispatcher("/WEB-INF/finish.jsp").forward(req, resp);
         }
     }
 }
