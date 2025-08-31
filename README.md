@@ -14,7 +14,7 @@ The methode graph.getQuestion(int level) shows the question, its parameter is th
 A jstl each loop iterates through the answer options by using the result of the graph.getOptions(int level) call.
 Then it shows the options as radio buttons. When the submit button will be pressed a post request hands on the result of the option as a int to the Answerservlet.
 
-The AnswerServlet checks the correctness of the answer by calling.
+The AnswerServlet checks the correctness of the answer by calling the graph.isAnswerRight(level, option) method.
 if the answer was correct and there is no more question left, the game is won. The finish jsp will be responded.
 if the answer is correct and there is a question left, then the level variable will be increased by 1 and the the quest.jsp file will be responded anew.
 if the answer was wrong then the finish.jsp will be responded.
